@@ -62,7 +62,7 @@
     <sql id="findPageWhere">
         <where>
             <if test="roleName != null and roleName != ''">
-                and role_name like "%"#{roleName}"%"
+                and role_name like CONCAT('%',#{roleName},'%')
             </if>
             and is_deleted = 0
         </where>
